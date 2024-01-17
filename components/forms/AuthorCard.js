@@ -10,7 +10,7 @@ export default function AuthorCard({ authorObj }) {
       <Card.Img variant="top" src={authorObj.image} alt={authorObj.first_name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{authorObj.first_name} {authorObj.last_name}</Card.Title>
-        <Link href={`/authors/${authorObj.firebaseKey}`} passHref>
+        <Link href={`/author/${authorObj.firebaseKey}`} passHref>
           <Button variant="primary" className="m-2">VIEW</Button>
         </Link>
         <Link href='/'>
