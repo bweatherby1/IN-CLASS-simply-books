@@ -53,7 +53,7 @@ const deleteSingleAuthor = (firebaseKey) => new Promise((resolve, reject) => {
 const updateAuthor = () => {};
 
 // TODO: GET A SINGLE AUTHOR'S BOOKS
-// const getAuthorBooks = () => {};
+ const getAuthorBooks = () => {};
 
 const favoriteAuthors = (uid) => new Promise((resolve, reject) => {
   fetch(`${endpoint}/authors.json?orderBy="uid"&equalTo="${uid}"`, {
@@ -77,5 +77,5 @@ export {
   deleteSingleAuthor,
   updateAuthor,
   favoriteAuthors,
-  // getAuthorBooks,
+  getAuthorBooks,
 };
