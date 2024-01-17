@@ -14,13 +14,13 @@ function Home() {
   const { user } = useAuth();
 
   // TODO: create a function that makes the API call to get all the books
-  const getAllTheBooks = () => {
+  const getAllBooks = () => {
     getBooks(user.uid).then(setBooks);
   };
 
   // TODO: make the call to the API to get all the books on component render
   useEffect(() => {
-    getAllTheBooks();
+    getAllBooks();
   }, []);
 
   return (
@@ -29,10 +29,10 @@ function Home() {
         <Button>Add A Book</Button>
       </Link>
       <div className="d-flex flex-wrap">
-        {/* TODO: map over books here using BookCard component */}
-        {books.map((book) => (
-          <BookCard key={book.firebaseKey} bookObj={book} onUpdate={getAllTheBooks} />
-        ))}
+        {/* TODO: map over books here using BookCard component */
+        books.map((book) => 
+          <BookCard key={book.firebaseKey} bookObj={book} onUpdate={getAllBooks} />
+        )}
       </div>
 
     </div>
