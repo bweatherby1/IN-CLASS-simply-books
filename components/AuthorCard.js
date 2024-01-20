@@ -17,6 +17,7 @@ export default function AuthorCard({ authorObj, onUpdate }) {
     <Card style={{ width: '18rem', margin: '10px' }}>
       <Card.Img variant="top" src={authorObj.image} alt={authorObj.first_name} style={{ height: '400px' }} />
       <Card.Body>
+      <span>{authorObj.email}</span>
         <Card.Title>{authorObj.first_name} {authorObj.last_name}</Card.Title>
         <p>{authorObj.favorite && <span>Favorite<br /></span> }</p>
         <Link href={`/author/${authorObj.firebaseKey}`} passHref>
@@ -36,6 +37,7 @@ export default function AuthorCard({ authorObj, onUpdate }) {
 AuthorCard.propTypes = {
   authorObj: PropTypes.shape({
     image: PropTypes.string,
+    email: PropTypes.string,
     first_name: PropTypes.string,
     last_name: PropTypes.string,
     favorite: PropTypes.bool,
