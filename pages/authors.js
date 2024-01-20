@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
 import { getAuthors } from '../api/authorData';
-import AuthorCard from '../components/forms/AuthorCard';
+import AuthorCard from '../components/AuthorCard';
 
 export default function author() {
 
