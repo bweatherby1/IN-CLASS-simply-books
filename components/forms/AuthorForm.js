@@ -40,7 +40,7 @@ function AuthorForm({ obj }) {
       createAuthor(payload).then(({ name }) => {
         const patchPayload = { firebaseKey: name };
         updateAuthor(patchPayload).then(() => {
-          router.push('/');
+          router.push('/authors');
         });
       });
     }
@@ -50,12 +50,24 @@ function AuthorForm({ obj }) {
     <Form onSubmit={handleSubmit}>
       <h2 className="text-white mt-5">{obj && obj.firebaseKey ? 'Update' : 'Create'} Author</h2>
 
+            {/* Email INPUT  */}
+            <FloatingLabel controlId="floatingInput1"  className="mb-3"  label="Email">
+        <Form.Control
+          type="email"
+          placeholder="Email"
+          name="email"
+          value={formInput.email}
+          onChange={handleChange}
+          required
+        />
+      </FloatingLabel>
+
       {/* FIRST_NAME INPUT  */}
-      <FloatingLabel controlId="floatingInput1" label="First Name" className="mb-3">
+      <FloatingLabel controlId="floatingInput1"  className="mb-3"  label="First Name">
         <Form.Control
           type="text"
           placeholder="First Name"
-          name="First Name"
+          name="first_name"
           value={formInput.first_name}
           onChange={handleChange}
           required
@@ -63,11 +75,11 @@ function AuthorForm({ obj }) {
       </FloatingLabel>
 
       {/* LAST_NAME INPUT  */}
-      <FloatingLabel controlId="floatingInput3" label="Last Name" className="mb-3">
+      <FloatingLabel controlId="floatingInput3"  className="mb-3" label="Last Name">
         <Form.Control
           type="text"
           placeholder="Last Name"
-          name="last name"
+          name="last_name"
           value={formInput.last_name}
           onChange={handleChange}
           required
