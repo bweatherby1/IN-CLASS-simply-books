@@ -22,6 +22,9 @@ export default function ViewAuthor() {
       </div>
       <div className="text-white ms-5 details">Author Email: <a href={`mailto:${authorDetails.email}`}>{authorDetails.email}</a>
         <hr />
+        <div>{authorDetails.first_name} {authorDetails.last_name}</div> 
+        <hr />
+        <p>{authorDetails.favorite && <span>&#10084;<br /></span> }</p>
       </div>
     </div>
   );
