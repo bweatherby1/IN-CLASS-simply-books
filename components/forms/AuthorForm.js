@@ -9,6 +9,7 @@ import { updateAuthor, createAuthor } from '../../api/authorData';
 
 const initialState = {
   image: '',
+  email: '',
   first_name: '',
   last_name: '',
   favorite: false,
@@ -59,11 +60,12 @@ function AuthorForm({ obj }) {
           value={formInput.email}
           onChange={handleChange}
           required
+          autocomplete='off'
         />
       </FloatingLabel>
 
       {/* FIRST_NAME INPUT  */}
-      <FloatingLabel controlId="floatingInput1"  className="mb-3"  label="First Name">
+      <FloatingLabel controlId="floatingInput2"  className="mb-3"  label="First Name">
         <Form.Control
           type="text"
           placeholder="First Name"
@@ -71,6 +73,7 @@ function AuthorForm({ obj }) {
           value={formInput.first_name}
           onChange={handleChange}
           required
+          autocomplete='off'
         />
       </FloatingLabel>
 
@@ -87,7 +90,7 @@ function AuthorForm({ obj }) {
       </FloatingLabel>
 
       {/* IMAGE INPUT  */}
-      <FloatingLabel controlId="floatingInput2" label="Author Image" className="mb-3">
+      <FloatingLabel controlId="floatingInput4" label="Author Image" className="mb-3">
         <Form.Control
           type="url"
           placeholder="Enter an image url"
@@ -123,6 +126,7 @@ function AuthorForm({ obj }) {
 AuthorForm.propTypes = {
   obj: PropTypes.shape({
     image: PropTypes.string,
+    email: PropTypes.string,
     first_name: PropTypes.string,
     last_name: PropTypes.string,
     favorite: PropTypes.bool,

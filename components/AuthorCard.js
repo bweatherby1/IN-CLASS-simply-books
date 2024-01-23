@@ -8,7 +8,7 @@ import { deleteAuthorBooks } from "../api/mergedData";
 export default function AuthorCard({ authorObj, onUpdate }) {
   
   const deleteThisAuthor = () => {
-    if (window.confirm(`Delete ${authorObj.first_name}?`)) {
+    if (window.confirm(`Delete ${authorObj.first_name} ${authorObj.last_name}?`)) {
       deleteAuthorBooks(authorObj.firebaseKey).then(() => onUpdate());
     }
   };
